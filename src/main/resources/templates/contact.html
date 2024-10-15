@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+<a th:href="@{/}">Home</a>
+<h1>Contact</h1>
+<form method="post" th:action="@{/contact}" th:object="${contact}">
+    <div>
+        <label for="firstname">Firstname : </label>
+        <input id="firstname" type="text" th:field="*{firstname}">
+    </div>
+    <div>
+        <label for="lastname">Lastname : </label>
+        <input id="lastname" type="text" th:field="*{lastname}">
+    </div>
+    <div>
+        <label for="phone">Phone : </label>
+        <input id="phone" type="tel" th:field="*{phone}">
+    </div>
+    <div>
+        <label for="email">Email : </label>
+        <input id="email" type="email" th:field="*{email}">
+    </div>
+    <div>
+        <label for="content">Message : </label>
+        <textarea id="content" th:field="*{content}" cols="50" rows="5"></textarea>
+    </div>
+    <button>Soumettre</button>
+</form>
+</body>
+</html>

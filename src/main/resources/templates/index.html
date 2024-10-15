@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h2>Le christ cosmique</h2>
+    <img th:src="@{/images/christ.jpg}" alt="Le Christ cosmique">
+    <ul>
+        <li th:each="skill: ${skills}" th:object="${skill}">
+            <a th:text="*{name}" th:href="@{/{id} (id=*{id})}"></a>
+        </li>
+    </ul>
+    <a th:href="@{/contact}">Contact</a>
+</body>
+</html>
